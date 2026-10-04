@@ -11,6 +11,12 @@ import lukas16 from '../assets/pexels-lukas-590016-scaled.jpg';
 // TODO: el sitio WordPress original apuntaba a http://test/ (placeholder). Definir la URL real.
 export const loginUrl = '#';
 
+export const contact = {
+  title: 'Solicita información',
+  text: 'Cuéntanos sobre tu institución y te contactaremos para explicarte cómo funciona el servicio.',
+  email: 'contacto@cieasypal.com',
+};
+
 export const hero = {
   title: 'Optimiza y potencia la investigación en tu universidad',
   text: 'Conecta, organiza y potencia tus líneas de investigación a lo largo de toda tu entidad con nuestra plataforma, capacitaciones y consultoría en el sector académico y científico.',

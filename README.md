@@ -19,4 +19,11 @@ Landing estática en [Astro](https://astro.build) que reemplaza el WordPress de 
 
 ## Despliegue en Hostinger
 
-El sitio es 100 % estático: subir el contenido de `dist/` a `public_html` (o conectar el repo por Git en hPanel y publicar `dist/`).
+El sitio es estático: subir el contenido de `dist/` a `public_html` (o conectar el repo por Git en hPanel y publicar `dist/`).
+
+## Formulario de contacto
+
+`public/contact.php` (se copia a `dist/`) envía los mensajes a `contacto@cieasypal.com` con `mail()` de PHP, que Hostinger ejecuta. Requisitos:
+
+- Crear la cuenta `no-reply@lineasdeinvestigacion.com` en Hostinger (remitente del correo; si no existe, puede caer en spam).
+- Solo funciona en el hosting: con `npm run dev` el envío devuelve error (Astro no ejecuta PHP). El destinatario y el remitente se cambian al inicio de `contact.php`.
