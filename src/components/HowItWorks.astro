@@ -1,0 +1,50 @@
+---
+import { Image } from 'astro:assets';
+import { howItWorks } from '../data/content';
+---
+
+<section id="como-funciona" class="section">
+  <div class="container">
+    <h2 class="section-title">{howItWorks.title}</h2>
+    {
+      howItWorks.steps.map((step) => (
+        <article class="step">
+          <Image src={step.image} alt={step.title} width={560} />
+          <div>
+            <h3>{step.title}</h3>
+            <p>{step.text}</p>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .step {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 4rem;
+  }
+  .step:nth-of-type(even) img {
+    order: 2;
+  }
+  .step img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  h3 {
+    font-size: 1.6rem;
+  }
+  @media (max-width: 720px) {
+    .step {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .step:nth-of-type(even) img {
+      order: 0;
+    }
+  }
+</style>

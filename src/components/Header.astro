@@ -1,0 +1,56 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/LineasdeInvestigacion-Logo-2.png';
+import { loginUrl } from '../data/content';
+---
+
+<header class="header">
+  <div class="container bar">
+    <a href="/" aria-label="Líneas de investigación"><Image src={logo} alt="Líneas de investigación" height={44} loading="eager" /></a>
+    <nav aria-label="Principal">
+      <a href="#sobre-nosotros">Nosotros</a>
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#por-que">Beneficios</a>
+      <a class="btn" href={loginUrl}>Entrar</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #fff;
+    box-shadow: 0 1px 6px rgb(0 0 0 / 0.08);
+  }
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 68px;
+  }
+  .bar img {
+    height: 44px;
+    width: auto;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  nav a:not(.btn) {
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  nav a:not(.btn):hover {
+    color: var(--accent);
+  }
+  @media (max-width: 720px) {
+    nav a:not(.btn) {
+      display: none;
+    }
+  }
+</style>

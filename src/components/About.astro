@@ -1,0 +1,40 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/LineasdeInvestigacion-Logo-2.png';
+import { about } from '../data/content';
+---
+
+<section id="sobre-nosotros" class="section about">
+  <div class="container grid">
+    <Image src={logo} alt="Líneas de investigación" width={320} />
+    <div>
+      <h2>{about.title}</h2>
+      {about.paragraphs.map((p) => <p>{p}</p>)}
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    background: var(--sky);
+    color: var(--ink);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  img {
+    margin-inline: auto;
+  }
+  h2 {
+    font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+  }
+  @media (max-width: 720px) {
+    .grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+  }
+</style>
